@@ -1,0 +1,70 @@
+.HomeOuterWrapper {
+  height: 100svh;
+  width: 100vw; 
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  background-color: #202022;
+  color: white;
+  display: flex;
+}
+
+.chatwrapper,
+.info {
+  position: relative;
+  /* border: 1px solid white; */
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #f9fafc;
+  color: black;
+}
+
+.chatwrapper {
+  /* width: 70vw; */
+  display: flex;
+  flex: 1;
+}
+.mem {
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.info,
+.mem {
+  width: 20vw;
+}
+
+.chat {
+  border-radius: 10px;
+  flex: 1;
+}
+
+@media only screen and (max-width: 750px) {
+  .info {
+    display: none;
+  }
+  .chatwrapper {
+    /* width: 100%; */
+    flex: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .chatwrapper .chat {
+    display: none;
+  }
+  .chatwrapper .mem {
+    flex: 1;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .HomeOuterWrapper {
+    flex-direction: column-reverse;
+  }
+  .chatwrapper {
+    flex: 1;
+    width: calc(100vw - 10px);
+  }
+}

@@ -1,0 +1,140 @@
+.navwrapper {
+  position: relative;
+  /* width: clamp(5vw, 7vw, 12vw); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  /* overflow: auto; */
+}
+
+.linkswrapper,
+.bottmwrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-wrap: nowrap;
+}
+
+.link {
+  display: flex;
+  width: 80%;
+  /* border: 1px solid white; */
+  margin: 0px 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 5px;
+  /* margin: 0px 0px; */
+  font-size: small;
+  transition: all ease-in-out 0.3s;
+}
+.link p {
+  /* display:none; */
+  position: absolute;
+  right: -75px;
+  z-index: 500;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 5px;
+  visibility: hidden;
+  opacity: 0;
+}
+.link p::before {
+  content: "";
+  position: absolute;
+  right: 96%;
+  transform: translateY(-3.5px) translateX(2px);
+  border: 13px solid;
+  border-color: #0000 #000 #0000 #0000;
+}
+/* 
+.link span {
+  position: absolute;
+  right: 95%;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 17px solid #222;
+  border-left: 0px solid #222;
+  border-top-left-radius: 10px;
+  translate: transformX(-5px);
+  visibility: hidden;
+  opacity: 0;
+} */
+
+.link:hover p,
+.link:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+.link:hover p {
+  animation: fadeInToolTip 0.5s ease-in-out;
+}
+@keyframes fadeInToolTip {
+  from {
+    right: -90px;
+  }
+  to {
+    right: -75px;
+  }
+}
+.active {
+  background-color: #464646;
+}
+
+.icons {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.imageWrapper {
+  margin-top: 20px;
+}
+
+.dash {
+  border: 1px solid;
+  width: 80%;
+}
+
+/* media queries exist here */
+
+@media only screen and (max-width: 450px) {
+  .navwrapper {
+    height: 10vh;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dash {
+    display: none;
+  }
+  .linkswrapper {
+    flex-direction: row;
+    gap: 0px;
+  }
+  .imageWrapper,
+  .bottmwrapper {
+    display: none;
+  }
+
+  .linkswrapper {
+    width: 100vw;
+    justify-content: space-around;
+  }
+  .link p {
+    display: none;
+  }
+}
+/* 
+@media only screen and (max-width: 750px) {
+  .navwrapper {
+    width: 12vw;
+  }
+} */
