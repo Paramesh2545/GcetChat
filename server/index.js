@@ -11,8 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 const MONGOURL = process.env.MONGO_URL || "";
 
-
-dotenv.config();
+dotenv.config()
 
 const bucketName= process.env.BUCKET_NAME;
 const bucketRegion= process.env.BUCKET_REGION;

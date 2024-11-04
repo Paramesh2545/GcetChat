@@ -9,6 +9,7 @@ import {
   checkAuth,
 } from "../controllers/auth.controller.js";
 import { verifyToken } from "../middleware/verifyToken.js";
+import { profile } from "../controllers/profile.controller.js";
 const router = express.Router();
 
 router.post("/signup", signup);
@@ -25,4 +26,5 @@ router.post("/reset-password/:token", resetPassword);
 
 router.get("/check-auth", verifyToken, checkAuth);
 
+router.get("/profile", profile)
 export default router;

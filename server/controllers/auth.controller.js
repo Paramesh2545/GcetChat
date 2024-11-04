@@ -27,8 +27,6 @@ export const signup = async (req, res) => {
         .json({ success: false, message: "User already exist" });
     }
 
-    //as email is not registered proceed to creating a new account
-    //first hash the password
     const hashedPassword = await bcryptjs.hash(password, 10);
     const verificationToken = generateVerficationCode();
     const user = new UserCred({
@@ -224,3 +222,4 @@ export const checkAuth = async (req, res) => {
     return res.status(500).json({ success: false, message: error });
   }
 };
+
