@@ -43,7 +43,6 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
-
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );
